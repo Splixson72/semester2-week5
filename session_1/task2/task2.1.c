@@ -13,7 +13,7 @@
  * - num2: a floating-point number
  *
  * Output:
- * - print the result of the aritmetic operation
+ * - print the result of the arithmetic operation
  * - print "Error, division by zero!" for divide operation with num2 equals to zero 
  *
  * Usage: 
@@ -47,10 +47,22 @@ int main(int argc, char *argv[]) {
     
     // Complete your code here
 	switch(operation){
-		case :
+		case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case 'x':
+            result = num1 * num2;
+            break;
+        case '/':
+            if(num2==0){printf("Error, division by zero!\n");}
+            else{result = num1 / num2;}
             break;
 		default:
 			printf("Operation not defined!\n");
+            return 1;
 	}
     
     printf("Result: %.2f\n", result);
