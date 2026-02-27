@@ -20,9 +20,10 @@ int main(void) {
     
     // TODO: Keep asking until valid input is provided
     // Use an appropriate loop structure
-    
+    while(valid_input == 0)
+    {
         printf("Enter temperature with scale (e.g., 23.5C or 75F): ");
-        
+        fgets(input,sizeof(input),stdin);
         // TODO: Use fgets to read the input
         
         // TODO: Remove the newline character from input
@@ -31,9 +32,10 @@ int main(void) {
         // TODO: Parse the input to extract temperature and scale
         // Hint: Use sscanf(input, "%f%c", &temperature, &scale);
         // Advanced: Consider handling input with a degree symbol (°)
-        
+        sscanf(input, "%f%c\n", &temperature,&scale)
         // TODO: Validate the scale (must be 'C', 'c', 'F', or 'f')
         // Convert scale to uppercase for easier comparison
+        scale.toupper();
         // Hint: scale = toupper(scale); // toupper() converts 'c' to 'C', 'f' to 'F'
         // Note: In Python, you'd use string method: scale = scale.upper()
         
@@ -46,6 +48,6 @@ int main(void) {
     // - If Fahrenheit, convert to Celsius: C = (F - 32) * 5/9
     // - Print the result with appropriate formatting, including the degree symbol (°)
     //   Hint: Use printf("%.1f°C is equal to %.1f°F\n", temperature, converted_temp);
-    
+    }
     return 0;
 }
