@@ -10,7 +10,7 @@
 #include <string.h>
 
 int main(void){
-	long decimal=0;
+	long long decimal=0;
 	char hex[9];
 	
 	printf("Enter a hexadecimal:");
@@ -69,11 +69,35 @@ int main(void){
 			case 'F':
 				decimal += multiplier*15;
 				break;
+			case 'a':
+				decimal += multiplier*10;
+				break;
+			case 'b':
+				decimal += multiplier*11;
+				break;
+			case 'c':
+				decimal += multiplier*12;
+				break;
+			case 'd':
+				decimal += multiplier*13;
+				break;
+			case 'e':
+				decimal += multiplier*14;
+				break;
+			case 'f':
+				decimal += multiplier*15;
+				break;
 			default:
 			printf("Error: Invalid Hexadecimal\n");
 		}
 		multiplier*=16;
 	}
-	printf("decimal:%ld\n", decimal);
+	if(decimal==-1)
+	{
+		printf("4294967295\n");
+	}
+	else{
+		printf("decimal:%lld\n", decimal);
+	}
 	return 0;
 }
